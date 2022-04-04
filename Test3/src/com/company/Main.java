@@ -1,22 +1,49 @@
 package com.company;
 
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
 public class Main {
 
     public static void main(String[] args) {
 
-        hello();
-        //I dont know the value of the fields of this person david
+
+        //I don't know the value of the fields of this person david
         Person david = new Person();
+        Scanner reader = new Scanner(System.in);
+
+        ArrayList<Person> people = new ArrayList<>();
+
+        while (true) {
+            System.out.println("Add person?");
+            String isQuit = reader.next();
+            if ( isQuit.equals("quit") ) break;
+
+
+            System.out.println("What is your name");
+            String name = reader.nextLine();
+            System.out.println("What is your surnname");
+            String surname = reader.nextLine();
+            System.out.println("What is your age");
+            int age = reader.nextInt();
+
+            //Person newperson = new Person (name, surname, age, false);
+            people.add( new Person (name, surname, age, false));
+
+
+        }
+
+        System.out.println("People size: " + people.size());
+        System.out.println("People: " + people);
 
         Person alex = new Person("Alex", "Lopez", 25, true, new Car ("Jaguar", 1966));
         //alex.printPerson();
+        System.out.println(alex);
 
-        Car citroen = new Car ("Citroen Picassa", 2010);
-
-        david.setCar(citroen);
-
-        System.out.println("Person: " + david);
+        Car citroen = new Car ("Citroen Picasa", 2010);
 
         alex.sayHello();
 
@@ -28,7 +55,7 @@ public class Main {
 
         david.printName();
 
-        hello();
+        hello(reader);
 
         david.setName("David");
         david.setSurname ("Webb");
@@ -39,9 +66,14 @@ public class Main {
 
         david.dogs.add(new Dog("Toby"));
         //david.printPerson();
+        System.out.println(david);
     }
 
-    public static void hello (){
+    public static void hello (Scanner reader){
         System.out.println("Hello I am a static method");
+
+        reader.nextLine();
+
+
     }
 }

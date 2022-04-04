@@ -53,7 +53,7 @@ public class Person {
 
     public void printName () {
         System.out.println("This person's name is: " + " "  + this.name  + " "  + this.surname);
-        Main.hello();
+
     }
 
     public void printPerson (){
