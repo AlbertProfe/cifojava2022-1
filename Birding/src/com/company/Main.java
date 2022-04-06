@@ -41,7 +41,7 @@ public class Main {
 
     public static void show(Scanner input, BirdDatabase db) {
 
-    }
+
 
     public static void statistics(Scanner input, BirdDatabase db) {
 
